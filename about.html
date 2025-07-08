@@ -30,11 +30,6 @@
 </head>
 <body>
   <div class="container py-5">
-
-    <div class="text-center mb-4">
-      <button id="toggleDarkMode" class="btn btn-outline-secondary">🌙 Tryb ciemny</button>
-    </div>
-
     <h1 class="mb-4 text-center">About project</h1>
     <p class="lead text-center">
       PolishStocksEye & GermanStocksEye is a data visualization project of Warsaw Stock Exchange (WSE) and DAX (Deutscher Aktienindex) data using Power BI, PostgreSQL, Docker, Python.<hr>
@@ -44,9 +39,14 @@
       The project is authored by Paweł Halamoda (pawelhalamoda@gmail.com).<br>
       <a href="https://www.linkedin.com/in/pawe%C5%82-halamoda/" target="_blank">LinkedIn profile</a>
     </p>
-    
+
     <div class="text-center mt-5">
       <a href="index.html" class="btn btn-primary">Return to main page</a>
+      
+      <!-- Mniejszy przycisk trybu ciemnego poniżej -->
+      <div class="mt-3">
+        <button id="toggleDarkMode" class="btn btn-outline-secondary btn-sm">🌙 Tryb ciemny</button>
+      </div>
     </div>
   </div>
 
@@ -55,7 +55,7 @@
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
-      toggleButton.textContent = isDark ? '☀️ Light mode' : '🌙 Dark Mode';
+      toggleButton.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
     });
   </script>
 
