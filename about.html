@@ -42,8 +42,6 @@
 
     <div class="text-center mt-5">
       <a href="index.html" class="btn btn-primary">Return to main page</a>
-      
-      <!-- Mniejszy przycisk trybu ciemnego poniżej -->
       <div class="mt-3">
         <button id="toggleDarkMode" class="btn btn-outline-secondary btn-sm">🌙 Tryb ciemny</button>
       </div>
@@ -52,10 +50,19 @@
 
   <script>
     const toggleButton = document.getElementById('toggleDarkMode');
+
+    // Przywróć tryb zapisany w localStorage
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      document.body.classList.add('dark-mode');
+      toggleButton.textContent = '☀️ Tryb jasny';
+    }
+
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
       toggleButton.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
     });
   </script>
 
