@@ -27,6 +27,14 @@
     .dark-mode hr {
       border-color: #444;
     }
+
+    .bi-check-circle-fill {
+      color: #28a745; /* Bootstrap green */
+    }
+
+    .bi-x-circle-fill {
+      color: #dc3545; /* Bootstrap red */
+    }
   </style>
 </head>
 <body>
@@ -58,19 +66,39 @@
         </thead>
         <tbody>
           <tr>
+            <td>Price, volume data</td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+          </tr>
+          <tr>
+            <td>Sessions analysis</td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+          </tr>
+          <tr>
+            <td>Daily price change analysis</td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+          </tr>
+          <tr>
+            <td>Financial statements testing</td>
+            <td>Testing</td>
+            <td><i class="bi bi-x-circle-fill"></i></td>
+          </tr>
+          <tr>
             <td>Capitalization</td>
-            <td>✔️</td>
-            <td>❌</td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+            <td><i class="bi bi-x-circle-fill"></i></td>
           </tr>
           <tr>
             <td>Index</td>
-            <td>✔️</td>
-            <td>❌</td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+            <td><i class="bi bi-x-circle-fill"></i></td>
           </tr>
           <tr>
             <td>Industry</td>
-            <td>✔️</td>
-            <td>❌</td>
+            <td><i class="bi bi-check-circle-fill"></i></td>
+            <td><i class="bi bi-x-circle-fill"></i></td>
           </tr>
         </tbody>
       </table>
@@ -87,7 +115,6 @@
   <script>
     const toggleButton = document.getElementById('toggleDarkMode');
 
-    // Przywróć tryb zapisany w localStorage
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode === 'enabled') {
       document.body.classList.add('dark-mode');
